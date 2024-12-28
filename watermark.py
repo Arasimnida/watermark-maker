@@ -4,6 +4,7 @@ from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import letter
 import io
 import os
+from tkinter import Tk, filedialog, simpledialog, messagebox
 
 def create_watermark(text, output_watermark_file):
     """Creates a PDF containing the watermark text diagonally across the page with good spacing."""
@@ -41,31 +42,34 @@ def add_watermark(input_pdf, watermark_pdf, output_pdf):
         writer.write(f)
 
 def main():
-    if (len(sys.argv) != 3):
-        print("\033[31m==> Error : Incorrect number of argument.\033[31m")
-        print("==> Usage: python3 watermark.py <file.pdf> <watermark text>")
-        sys.exit(1)
+    root = Tk()
+    root.withdraw()
 
-    input_pdf = sys.argv[1]
-    watermark_text = sys.argv[2]
-    output_pdf = os.path.splitext(input_pdf)[0] + "-watermarked.pdf"
+    input_pdf = filedialog.askopenfilename(
+        title="Select a PDF file",
+        filetypes=[("PDF files", "*.pdf")]
+    )
+    if not input_pdf:
+        messagebox.showerror("Error", "No file selected. The operation has been cancelled.")
+        return
 
-    if not os.path.exists(input_pdf):
-        print(f"\033[31m==> Error : The file '{input_pdf}' does not exist. Check if the path to the file is correct.\033[31m")
-        sys.exit(1)
+    watermark_text = simpledialog.askstring("Watermark text", "Enter the watermark text :")
+    if not watermark_text:
+        messagebox.showerror("Error", "No watermark text provided. The operation has been cancelled.")
+        return
 
     temp_watermark_file = "temp_watermark.pdf"
+    output_pdf = os.path.splitext(input_pdf)[0] + "-watermarked.pdf"
 
-    print(f"==> Création du filigrane avec le texte : {watermark_text}")
-    create_watermark(watermark_text, temp_watermark_file)
-    print("==> Done.")
-    print(f"==> Ajout du filigrane au fichier : {input_pdf}... ")
-    add_watermark(input_pdf, temp_watermark_file, output_pdf)
-    print("==> Done.")
-
-    os.remove(temp_watermark_file)
-
-    print(f"==> Fichier final généré : {output_pdf}")
+    try:
+        create_watermark(watermark_text, temp_watermark_file)
+        add_watermark(input_pdf, temp_watermark_file, output_pdf)
+        messagebox.showinfo("Sucess", f"Watermarked file created : {output_pdf}")
+    except Exception as e:
+        messagebox.showerror("Error", f"An error has occurred: {e}")
+    finally:
+        if os.path.exists(temp_watermark_file):
+            os.remove(temp_watermark_file)
 
 if __name__ == "__main__":
     main()
