@@ -7,3 +7,13 @@
 ```sh
 pip install -r requirements.txt
 ```
+
+## for macOS and linux user
+
+```
+chmod +x watermark.py
+cp watermark.py ..
+sudo mv ../watermark.py /usr/local/bin/watermark
+```
+
+run watermark where you want
