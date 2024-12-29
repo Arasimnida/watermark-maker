@@ -13,8 +13,8 @@ This can be used before sending personal information (such as ID paper) to a thi
 4. You have now a [new PDF](example/PDF-example-watermarked.pdf) with the watermark text saved in the same folder as the original PDF.
 
 <div style="display: flex; justify-content: space-between;">
-<img src="example/PDF-example.png" width="50%" height="30%" style="margin: 10px;"> 
-<img src="example/PDF-example-watermarked.png" width="50%" height="30%" style="margin: 10px;">
+<img src="example/PDF-example.png" width="40%" height="30%" style="margin: 10px;"> 
+<img src="example/PDF-example-watermarked.png" width="40%" height="30%" style="margin: 10px;">
 </div>
 
 ## Installation
