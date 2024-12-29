@@ -12,6 +12,11 @@ This can be used before sending personal information (such as ID paper) to a thi
 3. Select a watermark text such as "House application Paris 13"
 4. You have now a [new PDF](example/PDF-example-watermarked.pdf) with the watermark text saved in the same folder as the original PDF.
 
+<div style="display: flex; justify-content: space-between;">
+<img src="example/PDF-example.png" width="50%" height="30%" style="margin: 10px;"> 
+<img src="example/PDF-example-watermarked.png" width="50%" height="30%" style="margin: 10px;">
+</div>
+
 ## Installation
 
 ### Option 1 (easiest): Download the executable
@@ -38,7 +43,11 @@ For macOS/Linux user you have to make the file executable by running `chmod +x <
 pip install -r requirements.txt
 ```
 
-For macOS/Linux user please refer to this guide to install Tkinter: [Install Tkinter for mac/Linux user](https://python.doctor/page-tkinter-interface-graphique-python-tutoriel)
+Tkinter is already installed with python for Windows user. For macOS/Linux user please refer to this guide to install Tkinter:
+
+[Install Tkinter for macOS user](https://www.pythonguis.com/installation/install-tkinter-mac/)
+
+[Install Tkinter for Linux user](https://www.pythonguis.com/installation/install-tkinter-linux/)
 
 3. You can then run the programme using:
 ```sh
