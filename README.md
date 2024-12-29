@@ -21,10 +21,7 @@ This can be used before sending personal information (such as ID paper) to a thi
 
 ### Option 1 (easiest): Download the executable
 
-Select the correct executable according to your operating system and then download the file:
-- Linux: [click here](dist/watermark) 
-- Windows: [click here](dist/watermark.exe)
-- macOS: [click here](dist/watermark-mac)
+Select the correct executable according to your operating system and then download the file [click here](https://github.com/Arasimnida/watermark-maker/releases)
 
 ##### SHA 256:
 - Linux: 278e104eeee41049c0854e9d5a32d1f89c287b77d927f2728fef0425f2c51da5
