@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import sys
 from PyPDF2 import PdfReader, PdfWriter
 from reportlab.pdfgen import canvas
